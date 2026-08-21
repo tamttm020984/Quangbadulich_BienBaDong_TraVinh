@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám phá vẻ đẹp hoang sơ Bãi biển Ba Động Trà Vinh (Nay là Vĩnh Long) | Cẩm Nang Du Lịch</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0077b6;
+            --primary-dark: #023e8a;
+            --accent: #f77f00;
+            --light-bg: #f8f9fa;
+            --text-color: #2b2d42;
+            --text-muted: #6c757d;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            background-color: #fff;
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .back-btn {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { color: var(--accent); }
+
+        .article-header { padding: 40px 0 20px; }
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .article-title {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .article-content p {
+            display: block !important;
+            text-indent: 30px !important;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .article-content blockquote p { text-indent: 0 !important; }
+
+        .featured-image-container { margin-bottom: 35px; }
+        .featured-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2.8fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .main-content p { margin-bottom: 20px; font-size: 1.05rem; }
+        .main-content h2 {
+            font-size: 1.2rem;
+            margin-top: 35px;
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        .highlight-box {
+            background-color: #e0f2fe;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .info-card {
+            background-color: var(--light-bg);
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .info-list { list-style: none; width: 100%; text-align: left; }
+        .info-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+        .info-list i { color: var(--primary); margin-top: 4px; }
+
+        .btn-booking {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn-booking:hover { background-color: #e85d04; }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper { grid-template-columns: 1fr; }
+            .article-title { font-size: 1.8rem; }
+            .featured-image { height: 280px; }
+            .sidebar { position: static; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LNHiwrx9v_kdswYXOB-lVkZJ7D9wR1q4luoFpWVliQ&s=10" alt="Logo Ba Động Travel" class="logo-img">
+                <span>DU LỊCH BIỂN BA ĐỘNG TRÀ VINH</span>
+            </a>
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Quay lại Trang chủ</a>
+        </div>
+    </header>
+
+    <!-- 2. ARTICLE HEADER -->
+    <main class="container">
+        <section class="article-header">
+           <div class="breadcrumb">
+             <a href="index.html">Trang chủ</a> / 
+             <a href="index.html#overview">Giới thiệu</a> / 
+             <span>Bãi biển hoang sơ Ba Động</span>
+            </div>
+            <h1 class="article-title">Khám phá vẻ đẹp hoang sơ và bình yên của bãi biển Ba Động</h1>
+            <div class="article-meta">
+                <span><i class="fa-regular fa-calendar"></i> Cập nhật: 2026</span>
+                <span><i class="fa-solid fa-location-dot"></i> Xã Trường Long Hòa, TX. Duyên Hải, tỉnh Trà Vinh (Nay là P. Trường Long Hòa, tỉnh Vĩnh Long)</span>
+            </div>
+        </section>
+
+        <!-- 3. FEATURED IMAGE -->
+        <div class="featured-image-container">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Bãi biển hoang sơ Ba Động" class="featured-image">
+            <p class="image-caption">Nét mộc mạc hoang sơ cùng bờ cát mịn chạy dài tại bãi biển Ba Động.</p>
+        </div>
+
+        <!-- 4. CONTENT & SIDEBAR -->
+        <div class="content-wrapper">
+            <article class="main-content">
+                <p style="text-align: justify; text-indent: 30px;">Khác biệt hoàn toàn với không khí sôi động, nhộn nhịp của các thành phố du lịch biển như Vũng Tàu hay Nha Trang, <strong>Biển Ba Động - Trà Vinh (nay là Vĩnh Long)</strong> mang trong mình một nét đẹp rất riêng: tĩnh lặng, mộc mạc và nguyên sơ như chính tính cách con người vùng đất Nam Bộ.</p>
+
+                <h2>1. Bãi cát trắng mịn màng và hàng phi lao rì rào</h2>
+                <p style="text-align: justify; text-indent: 30px;">Tên gọi "Ba Động" xuất phát từ chính đặc điểm địa hình tự nhiên nơi đây. Khi thủy triều rút xuống, bãi biển phô diễn ba động cát (gồm hai động cát nhỏ và một động cát lớn) có hình dáng độc đáo, nhấp nhô ôm trọn lấy bờ biển. Chạy dọc theo dải cát là hàng phi dừa xanh ngút ngàn rủ bóng xuống mặt nước, tạo nên một không gian vô cùng mát mẻ để du khách nghỉ ngơi và dạo bước.</p>
+                <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/10/17/1105831/Bien-Ba-Dong-Tra-Vin.jpg" alt="Bãi biển Ba Động" class="featured-image">
+                <p class="image-caption">Bờ cát trắng mịn màng chạy dài tại bãi biển Ba Động.</p>
+                <div class="highlight-box">
+                    "Nước biển Ba Động mang sắc màu phù sa đặc trưng của vùng đồng bằng sông Cửu Long, không trong xanh ngọc bích nhưng lại sở hữu nguồn hải sản vô cùng phong phú và bờ cát rất êm chân."
+                </div>
+
+                <h2>2. Khung cảnh bình minh rực rỡ</h2>
+                <p style="text-align: justify; text-indent: 30px;">Thời điểm lý tưởng nhất để trải nghiệm sự hoang sơ của Ba Động là vào khoảng <strong>5:30 sáng</strong>. Lúc này, mặt trời từ từ nhô lên từ phía chân trời xa, nhuộm hồng cả một vùng không gian bao la. Bạn có thể thong dong bước đi trên bãi cát còn đọng hơi sương, lắng nghe tiếng sóng vỗ rì rào và hít thở không khí trong lành của biển cả miền Tây.</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPQNVw4i_445b-swQqIWfDebGTgwZG9brJGnTGF2A_RA&s=10" alt="Bãi biển Ba Động" class="featured-image">
+                <p class="image-caption">Bình minh trên bãi biển Ba Động.</p>
+
+                <h2>3. Những trải nghiệm không thể bỏ qua</h2>
+                <p style="text-align: justify; text-indent: 30px;">Đến với bãi biển hoang sơ Ba Động, du khách không chỉ được nhìn ngắm phong cảnh thiên nhiên xinh đẹp mà còn có thể tham gia các hoạt động trải nghiệm thú vị:</p>
+                <ul style="padding-left: 0; list-style-position: inside;">
+                    <li style="text-indent: 25px; text-align: justify; line-height: 1.8;">
+                    <strong>Check-in cánh đồng điện gió: </strong>Cánh đồng điện gió là một biểu tượng của biển Ba Động, là nơi thu hút rất nhiều khách du lịch đến đây check-in. Phong cảnh nơi đây siêu ấn tượng với cây cầu vàng nối dài ra biển, dẫn bạn đi qua những tua-bin gió khổng lồ.</li>
+                </ul>
+                <ul style="padding-left: 0; list-style-position: inside;">
+                    <li style="text-indent: 25px; text-align: justify; line-height: 1.8;">
+                    <strong>Cắm trại “glamping”: </strong> Các khu cắm trại sang trọng với lều bạt, giường ngủ, nhà tắm riêng, cung cấp trải nghiệm hòa mình với thiên nhiên mà vẫn tiện nghi.</li>
+                </ul>
+                <ul style="padding-left: 0; list-style-position: inside;">
+                    <li style="text-indent: 25px; text-align: justify; line-height: 1.8;">
+                    <strong>Tìm hiểu lịch sử văn hoá địa phương: </strong> Tìm hiểu lịch sử văn hoá địa phương cũng là cách để bạn hiểu thêm về vùng đất mà mình ghé qua. Khi đến với biển Ba Động, bạn sẽ được nghe về truyền thuyết Ba Động, cũng như tín ngưỡng Bà Cố Hỷ vang bóng một thời, hay cuộc trốn chạy lịch sử của vua Gia Long đến vùng đất này, để lại cho nơi đây một loạt địa danh mang tiền tố “Long” ấn tượng.</li>
+                </ul>
+                <ul style="padding-left: 0; list-style-position: inside;">
+                    <li style="text-indent: 25px; text-align: justify; line-height: 1.8;">
+                    <strong>Thưởng thức hải sản tươi sống: </strong> Khi đến biển Ba Động, bạn không thể bỏ qua các món hải sản tươi ngon hấp dẫn. Bạn có thể thưởng thức ở các quán chòi lá của người dân địa phương, hoặc tìm mua ở các khu chợ dân sinh giá rẻ và mang về tự chế biến.</li>
+                </ul>
+            </article>
+
+            <aside class="sidebar">
+                <div class="info-card">
+                    <h3>Thông tin chuyến đi</h3>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fa-solid fa-cloud-sun"></i>
+                            <div><strong>Thời điểm đẹp nhất:</strong> Từ tháng 10 đến tháng 4 năm sau (Mùa khô, biển êm).</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-ticket"></i>
+                            <div><strong>Vé vào cổng:</strong> Miễn phí hoàn toàn.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-car"></i>
+                            <div><strong>Di chuyển:</strong> Cách trung tâm Phường Trà Vinh khoảng 55km (khoảng 1 tiếng đi xe máy/ô tô).</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-coins"></i>
+                            <div><strong>Chi phí dự kiến:</strong> 300.000 - 500.000 VNĐ / người (Ăn uống và vui chơi).</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Trang Quảng bá du lịch Biển Ba Động tỉnh Trà Vinh (nay là Tỉnh Vĩnh Long).</p>
+        </div>
+    </footer>
+</body>
+</html>

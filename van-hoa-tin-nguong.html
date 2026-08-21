@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VĂN HÓA VÀ TÍN NGƯỠNG</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0077b6;
+            --primary-dark: #023e8a;
+            --accent: #f77f00;
+            --light-bg: #f8f9fa;
+            --text-color: #2b2d42;
+            --text-muted: #6c757d;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            background-color: #fff;
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .back-btn {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: var(--accent); }
+
+        .article-header { padding: 40px 0 20px; }
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .article-title {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+
+        .article-content p {
+            display: block !important;
+            text-indent: 30px !important;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .article-content blockquote p { text-indent: 0 !important; }
+
+        .featured-image-container { margin-bottom: 35px; }
+        .featured-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 8px;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2.8fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .main-content p { margin-bottom: 20px; font-size: 1.05rem; }
+        .main-content h2 {
+            font-size: 1.2rem;
+            margin-top: 35px;
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        .highlight-box {
+            background-color: #e0f2fe;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .info-card {
+            background-color: var(--light-bg);
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .info-list { list-style: none; width: 100%; }
+        .info-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.85rem;
+            text-align: justify;
+        }
+
+        .btn-booking {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn-booking:hover { background-color: #e85d04; }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper { grid-template-columns: 1fr; }
+            .article-title { font-size: 1.5rem; }
+            .featured-image { height: 280px; }
+            .sidebar { position: static; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LNHiwrx9v_kdswYXOB-lVkZJ7D9wR1q4luoFpWVliQ&s=10" alt="Logo Ba Động Travel" class="logo-img">
+                <span>DU LỊCH BIỂN BA ĐỘNG TRÀ VINH</span>
+            </a>
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Quay lại Trang chủ</a>
+        </div>
+    </header>
+
+    <!-- 2. ARTICLE HEADER -->
+    <main class="container">
+        <section class="article-header">
+            <div class="breadcrumb">
+                <a href="index.html">Trang chủ</a> / 
+                <a href="index.html#overview">Giới thiệu</a> / 
+                <span>Văn hóa và tín ngưỡng</span>
+            </div>
+            <h1 class="article-title">VĂN HÓA VÀ TÍN NGƯỠNG</h1>
+         
+            <div class="article-meta">
+                <span><i class="fa-regular fa-calendar"></i> Cập nhật: 2026</span>
+               
+                <span><i class="fa-solid fa-location-dot"></i> Xã Trường Long Hòa, TX. Duyên Hải, tỉnh Trà Vinh (Nay là P. Trường Long Hòa, tỉnh Vĩnh Long)</span>
+            </div>
+        </section>
+
+        <!-- 3. FEATURED IMAGE -->
+        <div class="featured-image-container">
+            <img src="https://images.vietnamtourism.gov.vn/vn//images/2024/thang_5/0805.nhabaotang_tra_vinh.jpg" alt="Canh dong dien gio" class="featured-image">
+            <p class="image-caption">Nhà Bảo tàng Văn hóa Dân tộc Khmer - Trà Vinh.</p>
+        </div>
+
+        <!-- 4. CONTENT & SIDEBAR -->
+        <div class="content-wrapper">
+            <article class="main-content article-content">
+                <p style="text-align: justify; text-indent: 30px;">Nằm giữa lòng miền Tây Nam Bộ, Trà Vinh là điểm giao thoa độc đáo của văn hóa Khmer và cảnh sắc thiên nhiên hài hòa, yên bình. Nếu bạn đang tìm kiếm địa điểm du lịch Trà Vinh đậm chất bản địa, nơi những ngôi chùa vàng rực rỡ hòa quyện nhẹ nhàng với không gian miệt vườn xanh mát. Hành trình khám phá Trà Vinh chắc chắn sẽ mở ra những câu chuyện sâu sắc về lịch sử, tín ngưỡng và nét sống giản dị, để lại ấn tượng khó phai.</p>
+
+                <h2>1. Ao Bà Om</h2>
+                <p style="text-align: justify; text-indent: 30px;">Được công nhận là Thắng cảnh cấp Quốc gia, Ao Bà Om là điểm du lịch Trà Vinh đầu tiên làm rung động lòng người bởi vẻ đẹp huyền bí, khó tả. Hồ nước vuông vắn như một kiệt tác của tạo hóa, mặt nước êm đềm phản chiếu bầu trời. Điều tạo nên sức hút ma mị chính là hàng trăm gốc dầu, cây sao cổ kính với bộ rễ khổng lồ trồi lên mặt đất, tạo nên khung cảnh siêu thực như bước ra từ truyện cổ tích. Ánh nắng xuyên qua tán lá tạo nên những vệt vàng óng ả.</p>
+                <p style="text-align: justify; text-indent: 30px;">Không gian nơi đây thấm đẫm hơi thở của thời gian và truyền thuyết về người phụ nữ Khmer thông tuệ, câu chuyện đã trở thành nguồn cảm hứng bất tận. Mỗi bước chân quanh hồ là một lần lắng đọng, tìm về sự yên bình giữa thiên nhiên kỳ vĩ.</p>
+                
+                <img src="https://mia.vn/media/uploads/blog-du-lich/ao-ba-om-03-1699921853.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Ao Bà Om là một thắng cảnh thu hút đông đảo du khách ghé tham quan</p>
+
+                <p style="text-align: justify; text-indent: 30px;">Ao Bà Om có nhiều điều thú vị để kể về nguồn gốc và ý nghĩa. Tính tới nay đã có hơn 10 dị bản về truyền thuyết gắn liền với địa danh này. Một câu chuyện nổi bật là về cuộc thi đào ao giữa hai bên nam và nữ của người Khmer cổ đại. Bên nữ do bà Om chỉ huy đã dùng mưu kế để đánh lừa bên nam và thắng cuộc. Từ đó, ao được đặt theo tên bà Om và có truyền thống nam đi cưới nữ, con lấy họ mẹ cũng bắt nguồn từ đây. Ngoài ra còn có nhiều phiên bản khác nhau để giải thích về cái tên của ao Bà Om, phản ánh sự phong phú và đa dạng của văn hóa dân gian.</p>
+                
+                <img src="https://mia.vn/media/uploads/blog-du-lich/ao-ba-om-02-1699921853.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Ao Bà Om gắn liều với vô vàn truyền thuyết hấp dẫn, ly kỳ</p>
+
+                <img src="https://mia.vn/media/uploads/blog-du-lich/ao-ba-om-04-1699921852.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Toàn cảnh ao Bà Om khi nhìn từ trên cao đẹp đến đắm say</p>
+
+                <img src="https://mia.vn/media/uploads/blog-du-lich/ao-ba-om-06-1699921852.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Điểm đến này tạo cảm giác thư thái, thanh bình cho bất kỳ ai đến đây tham quan</p>
+
+                <img src="https://mia.vn/media/uploads/blog-du-lich/ao-ba-om-08-1699921921.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Đây cũng là nơi tổ chức nhiều lễ hội Trà Vinh đặc sắc</p>
+
+                <h2>2. Chùa Âng (Angkorajaborey)</h2>
+                <p style="text-align: justify; text-indent: 30px;">Chỉ cách Ao Bà Om vài bước chân, Chùa Âng hiện lên uy nghi như một tòa lâu đài thần thoại với kiến trúc Angkor tráng lệ. Những mái chùa cong vút vươn cao, được phủ sắc vàng kim rực rỡ dưới nắng. Tượng thần Krud (Garuda) – linh vật Hindu – được điêu khắc tinh xảo đến từng chi tiết. Du khách bước vào khuôn viên chùa như lạc vào một thế giới nghệ thuật, nơi mỗi phù điêu kể một câu chuyện, mỗi hoa văn là một bài thơ bằng đá. Đây thực sự là điểm du lịch Trà Vinh không thể bỏ qua cho những ai đam mê kiến trúc tôn giáo Đông Nam Á. Hương trầm thoang thoảng cùng tiếng kinh Pali du dương tạo nên bầu không khí trang nghiêm mà thanh thản.</p>
+                <img src="https://mia.vn/media/uploads/blog-du-lich/chua-ang-01-1700589047.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Chùa Âng Trà Vinh mang nét đẹp Khmer cổ kính nhưng vẫn rất nguy nga</p>
+               
+                <p style="text-align: justify; text-indent: 30px;">Với vị trí đắc địa và vẻ đẹp lôi cuốn, chùa Âng là một điểm đến không thể bỏ qua cho những người muốn khám phá văn hóa và lịch sử độc đáo của tỉnh Trà Vinh (nay là tỉnh Vĩnh Long). Đến thăm chùa Âng, bạn sẽ được trải nghiệm không khí tâm linh và thư thái giữa không gian truyền thống Khmer và nét hiện đại của thành phố Trà Vinh.</p>
+
+                <img src="https://mia.vn/media/uploads/blog-du-lich/chua-ang-02-1700589047.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Chùa Âng sáng rực giữa một góc trời</p>
+
+                <h2>3. Bảo tàng văn hóa dân tộc Khmer</h2>
+                <p style="text-align: justify; text-indent: 30px;">Đối diện Chùa Âng, Bảo tàng Văn hóa Dân tộc Khmer mở ra như một cuốn sách sống về lịch sử và văn hóa. Đây không chỉ là một trong những điểm du lịch ở Trà Vinh thông thường mà còn là hành trình khám phá chiều sâu văn hóa qua từng hiện vật quý giá. Từ trang phục truyền thống thêu thùa công phu, nhạc cụ dân gian mang âm thanh của tổ tiên, đến những dụng cụ sinh hoạt đời thường, tất cả đều được bảo tồn cẩn trọng. Mỗi góc trưng bày là một mảnh ghép đa sắc, giúp du khách thấu hiểu nguồn gốc, phong tục và tinh thần nghệ thuật của cộng đồng Khmer trên mảnh đất phương Nam này.</p>
+                <img src="https://mia.vn/media/uploads/blog-du-lich/vi-tri-dia-ly-1706021909.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Toàn cảnh từ trên cao của bảo tàng Văn hóa dân tộc Khmer</p>
+                <img src="https://baotanglichsu.vn/DataFiles/Uploaded/image/data%20Hung/thang%205%20n%C4%83m%202014/bao%20tang%20kho%20me%20o%20tra%20vinh/2.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Dụng cụ đánh bắt thủy sản của người Khmer được trưng bày tại Bảo tàng</p>
+                <img src="https://baotanglichsu.vn/DataFiles/Uploaded/image/data%20Hung/thang%205%20n%C4%83m%202014/bao%20tang%20kho%20me%20o%20tra%20vinh/4.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Dàn nhạc ngũ âm được trưng bày tại Bảo tàng</p>
+
+                <h2>4. Chùa Vàm Rây</h2>
+                <p style="text-align: justify; text-indent: 30px;">Được tôn vinh là ngôi chùa Khmer lớn nhất cả nước, Chùa Vàm Rây là biểu tượng rực rỡ nhất trong danh sách địa điểm du lịch Trà Vinh. Từ xa, sắc vàng của chùa như ngọn lửa thiêng bừng cháy giữa cánh đồng xanh bát ngát. Kiến trúc Angkor truyền thống được thể hiện đỉnh cao qua từng đường nét trang trí hoa văn cầu kỳ, khiến người xem phải trầm trồ.</p>
+                <p style="text-align: justify; text-indent: 30px;">Điểm nhấn đặc biệt nhất là pho tượng Phật Thích Ca nhập Niết bàn khổng lồ nằm ngoài trời, một tác phẩm điêu khắc hoành tráng nhưng vẫn toát lên sự an nhiên, thanh thản tuyệt đối. Đây là nơi không thể thiếu để chiêm bái và lưu giữ những khung hình tuyệt đẹp.</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1htyjZRoG3TBSoCj5gam6sJx8Ou6RnxuqpRboBMImQr7S3Xd1shuYbh4&s=10" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Chùa Vàm Rây</p>
+               
+                <h2>5. Chùa Cò (Chùa Nodol)</h2>
+                <p style="text-align: justify; text-indent: 30px;">Chùa Cò mang đến trải nghiệm độc đáo khi kết hợp yếu tố tâm linh với vẻ đẹp sinh thái tự nhiên. Khuôn viên rợp bóng cây cổ thụ xanh um là nơi trú ngụ của hàng nghìn con cò trắng, vạc, diệc và nhiều loài chim khác. Mỗi buổi chiều hoàng hôn, khung cảnh hàng ngàn cánh chim bay về tổ tạo nên một bản giao hưởng thiên nhiên choáng ngợp. Tiếng chim hót ríu rít, ánh vàng óng của mặt trời phủ lên tán cây, tạo nên một bức tranh thơ mộng khó quên. Đây thực sự là điểm du lịch ở Trà Vinh lý tưởng cho những tâm hồn yêu thiên nhiên, muốn hòa mình vào sự hoang dã trong lành.</p>
+                <img src="https://thamhiemmekong.com/wp-content/uploads/2020/04/chuacotravinh.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Chùa Nodol – Chùa Cò</p>
+
+                <h2>6. Chùa Hang (Kompong Chray)</h2>
+                <p style="text-align: justify; text-indent: 30px;">Chùa Hang gây ấn tượng với cổng chùa được thiết kế như miệng hang động huyền bí đầy mê hoặc. Kiến trúc cổ kính pha chút hoang sơ tạo nên nét riêng biệt không lẫn vào đâu được. Ngôi chùa không chỉ thu hút bởi lối kiến trúc độc đáo mà còn là thiên đường của các loài chim quý hiếm, làm cho không gian thêm phần linh thiêng và sống động. Bước vào chùa như bước vào một thế giới khác, nơi con người và thiên nhiên hòa quyện trong sự cân bằng hoàn hảo. Đây là địa điểm du lịch Trà Vinh dành cho những ai tìm kiếm sự khác biệt và yên tĩnh tuyệt đối.</p>
+                <img src="https://image.plo.vn/w2000/Uploaded/2026/xqeioxdrkw/2025_01_16/chua-kompong-chray-7621-6426.png.webp" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Khuôn viên Chùa Hang (Kompong Chray)</p>
+
+                <p style="text-align: justify; text-indent: 30px;">Văn hóa và tín ngưỡng Trà Vinh nổi bật nhờ sự giao thoa đặc sắc của ba dân tộc Kinh, Khmer và Hoa, tiêu biểu qua hệ thống kiến trúc Phật giáo Nam tông, các lễ hội dân gian lớn và đời sống tâm linh phong phú.</p>
+
+                <h2>7. Lễ hội truyền thống tại Trà Vinh</h2>
+                <h3>7.1 Lễ hội Chôl-Chnam-Thmây</h3>
+                <p style="text-align: justify; text-indent: 30px;"><strong>Lễ Chôl Chnam Thmây</strong> là dịp đón năm mới quan trọng của người Khmer, kéo dài ba ngày từ 14 - 16/4 dương lịch (bốn ngày nếu là năm nhuận). Vào đêm giao thừa, các chùa tổ chức tụng kinh, rắc nước thơm để xua tan vận rủi, đón chào một năm mới may mắn. Người dân tại từng gia đình cũng thắp hương, đốt đèn, làm lễ tiễn vị thần cũ và đón vị thần mới cai quản năm tiếp theo.</p>
+                <p style="text-align: justify; text-indent: 30px;">Sáng hôm sau, mọi người mang lễ vật, hương đèn đến chùa tham gia nghi thức rước Mô Ha Sang Kram, cầu mong phước lành. Ngày cuối cùng, họ chuẩn bị cơm dâng lên các sư sãi, nghe giảng đạo và thực hiện nghi thức tắm Phật bằng nước thơm để thể hiện lòng thành kính. Đây là một trong các lễ hội truyền thống ở Trà Vinh mang đậm bản sắc Khmer, thu hút đông đảo người dân và du khách tham gia, góp phần làm phong phú thêm bức tranh văn hóa của lễ hội Trà Vinh.</p>
+                <img src="https://mia.vn/media/uploads/blog-du-lich/chol-chnam-thmay-quy-mo-le-hoi-1721618960.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Chol Chnam Thmay là một trong những lễ hội quan trọng nhất của người Khmer</p>
+                
+                <h3>7.2 Lễ hội Ok Om Bok (Lễ cúng trăng)</h3>
+                <p style="text-align: justify; text-indent: 30px;"><strong>Lễ hội Ok Om Bok </strong> thuộc những lễ hội truyền thống tiêu biểu ở Trà Vinh, diễn ra vào ngày rằm tháng 10 âm lịch (15 tháng Ka-Đât theo lịch Khmer). Sự kiện này là cơ hội để người Khmer thể hiện lòng thành kính với thần Mặt Trăng, gửi gắm ước nguyện về mùa màng thuận lợi và cuộc sống đủ đầy. Lễ hội cũng đánh dấu sự chuyển giao giữa mùa mưa và mùa khô, mang ý nghĩa quan trọng trong văn hóa nông nghiệp của người Khmer.</p>
+                <p style="text-align: justify; text-indent: 30px;">Người dân thường làm lễ tại nhà, chùa và đặc biệt là tại Ao Bà Om – nơi diễn ra nghi thức cúng trăng long trọng nhất. Khi Mặt Trăng lên cao, chủ lễ thắp nhang cầu khấn, những người tham dự chắp tay trước ngực tỏ lòng tri ân. Bên cạnh nghi thức cúng trăng, lễ hội Trà Vinh này còn thu hút du khách với nhiều hoạt động hấp dẫn như đua ghe ngo trên sông Long Bình, thả đèn nước tại Ao Bà Om, hội chợ trưng bày, các trò chơi dân gian như kéo co, nhảy bao bố và tham quan bảo tàng văn hóa Khmer.</p>
+                <img src="https://cly.1cdn.vn/2021/10/01/dantoctongiao.congly.vn-upload-content_img-2021-1001-_nhung-chiec-den-gio-lam-sang-ruc-ca-vung-troi-trong-ngay-le-ok-om-bok-anh-i_anh_2.png" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Những chiếc đèn gió làm sáng rực cả vùng trời trong ngày lễ Ok Om Bok</p>
+
+                <h3>7.3 Lễ hội Nghinh ông</h3>
+                <p style="text-align: justify; text-indent: 30px;"><strong>Lễ hội Nghinh Ông</strong>  ở Trà Vinh (còn gọi là Lễ hội cúng biển Mỹ Long) là Di sản văn hóa phi vật thể quốc gia, được tổ chức hàng năm từ ngày 10 đến 12 tháng 5 Âm lịch tại thị trấn Mỹ Long, huyện Cầu Ngang. Đây là dịp ngư dân cầu mong mưa thuận gió hòa và mùa đánh bắt bội thu.</p>
+                <img src="https://cdnmedia.baotintuc.vn/2014/06/09/16/02/nghinhong.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Lễ hội Nghinh ông</p>
+
+                <h3>7.4 Lễ Kathina (Lễ dâng y)</h3>
+                <p style="text-align: justify; text-indent: 30px;"><strong>Lễ Kathina (Lễ dâng y)</strong>  được tổ chức hàng năm trong khoảng tháng 9 đến tháng 10 âm lịch tại các chùa nhằm cầu an cho gia đình yên ấm.</p>
+                <p style="text-align: justify; text-indent: 30px;">Người Khmer tổ chức lễ dâng áo cà sa, hoa lên các sư chùa trong không khí trang trọng, kết hợp các trò chơi dân gian, thu hút nhiều người đến xem. Lễ dâng y còn gọi là lễ Kathina hay dâng bông, được tổ chức hàng năm trong khoảng tháng 9 đến tháng 10 âm lịch tại các chùa nhằm cầu an cho gia đình, phum sóc yên ấm. Mỗi chùa chỉ được tổ chức nghi lễ một lần trong năm và diễn ra trong hai ngày.</p>
+                <img src="https://i1-dulich.vnecdn.net/2024/11/14/462540823-1271084914238497-5055516399491276500-n-1731551585.png?w=1200&h=0&q=100&dpr=1&fit=crop&s=cfZUcivRl6wtd2fq5mO3rg" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Lễ Kathina (Lễ dâng y)</p>
+
+                <h3>7.5 Lễ Sene Đôn Ta (Sene Đolta)</h3>
+                <p style="text-align: justify; text-indent: 30px;"><strong>Lễ Sene Đôn Ta (Sene Đolta)</strong> là một trong những lễ hội truyền thống quan trọng của đồng bào Khmer Nam Bộ. Tại Trà Vinh, lễ hội được tổ chức hằng năm vào khoảng từ ngày 29 tháng 8 đến ngày 1 tháng 9 âm lịch. Đây là dịp để con cháu tưởng nhớ, tri ân công ơn ông bà, tổ tiên và cầu mong cho gia đình, phum sóc được bình an, hạnh phúc.</p>
+                <p style="text-align: justify; text-indent: 30px;">Theo quan niệm của người Khmer, ông bà tổ tiên luôn dõi theo và phù hộ cho con cháu. Vì vậy, lễ Sen Dolta mang ý nghĩa sâu sắc về đạo lý “uống nước nhớ nguồn”, thể hiện lòng hiếu thảo và sự gắn kết gia đình. Lễ hội cũng là dịp để cộng đồng sum họp, cùng nhau gìn giữ và phát huy bản sắc văn hóa dân tộc.</p>
+                <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/10/6/960990/Z2823436285588_74Da8.jpg" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Lễ Sene Đôn Ta (Sene Đolta)</p>
+
+                <p style="text-align: justify; text-indent: 30px;">Có thể thấy, các lễ hội truyền thống của tỉnh Trà Vinh (nay là tỉnh Vĩnh Long) không chỉ phản ánh đời sống tâm linh phong phú của đồng bào Khmer mà còn góp phần gìn giữ, phát huy những giá trị văn hóa đặc sắc của địa phương. Thông qua các lễ hội như lễ hội Nghinh Ông, Chôl Chnăm Thmây, Óc Om Bóc, Kathina hay Sen Đôn Ta, du khách có cơ hội hiểu hơn về phong tục, tập quán và tinh thần đoàn kết cộng đồng của người dân nơi đây. Những lễ hội ấy đã và đang trở thành cầu nối quan trọng trong việc quảng bá hình ảnh Trà Vinh – một vùng đất giàu truyền thống, đậm đà bản sắc văn hóa dân tộc.</p>
+            </article>
+
+            <aside class="sidebar">
+                <div class="info-card">
+                    <h3>Thông tin tham khảo</h3>
+                    <ul class="info-list">
+                        <li>
+                            <div><strong>1. Trang phục: </strong> Nên mặc quần áo lịch sự, kín đáo khi vào các ngôi chùa Khmer hoặc không gian hành lễ tôn nghiêm.</div>
+                        </li>
+                        <li>
+                            <div><strong>2. Ứng xử: </strong> Giữ trật tự trong các nghi thức tâm linh chính, xin phép trước khi chụp ảnh người dân hoặc các vị sư sãi.</div>
+                        </li>
+                        <li>
+                            <div><strong>3. Di chuyển: </strong> Đặt phòng lưu trú và phương tiện sớm vì các dịp lễ lớn (như Ok Om Bok) thu hút rất đông khách du lịch đổ về Trà Vinh.</div>
+                        </li>
+                    </ul>
+            
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Trang Quảng bá du lịch Biển Ba Động tỉnh Trà Vinh (nay là tỉnh Vĩnh Long)</p>
+        </div>
+    </footer>
+</body>
+</html>

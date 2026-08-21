@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Khám Phá Biển Ba Động - Trà Vinh | Điểm Đến Sinh Thái & Văn Hóa</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS RESET & VARIABLES --- */
+        :root {
+            --primary: #0077b6;
+            --primary-dark: #023e8a;
+            --secondary: #00b4d8;
+            --accent: #f77f00;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            background-color: #bdeeeb;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        /* --- BỐ CỤC PHẦN "TẠI SAO NÊN ĐẾN BA ĐỘNG" --- */
+        .reasons-section {
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #023e8a;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            width: 100%;
+        }
+
+        .reason-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 10px 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            height: auto;
+            min-height: 420px;
+            transition: all 0.3s ease;
+        }
+
+        .reason-card img, 
+        .reason-card .info-card-img, 
+        .reason-card .card-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }   
+
+        .card-icon {
+            font-size: 1rem;
+            color: #0077b6;
+            margin-top: 5px;
+        }
+
+        .reason-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #023e8a;
+            margin-top: 8px;
+        }
+
+        .reason-card p {
+            font-size: 1rem;
+            color: #e20404;
+            line-height: 1.6;
+            text-align: center;
+            margin-top: 10px;
+            display: block;
+            overflow: visible;
+            -webkit-line-clamp: unset;
+            line-clamp: unset;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            padding: 0 5px;
+        }
+
+        @media (max-width: 992px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }   
+
+        .info-card {
+            background-color: var(--light);
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+        }
+
+        .info-card-img {
+            width: 70%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 10px;         
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            gap: 10px;
+            background-color: var(--accent);
+            color: #d1ebe5;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0, 17, 255, 0.4);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: #003cff;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        /* --- BUTTONS TRÊN NAVBAR --- */
+        .btn-nav-login {
+            border: 1.5px solid var(--primary);
+            color: var(--primary) !important;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-weight: 700 !important;
+            transition: var(--transition);
+        }
+
+        .btn-nav-login:hover {
+            background-color: var(--primary);
+            color: #fff !important;
+        }
+
+        .btn-nav-register {
+            background-color: var(--accent);
+            color: #fff !important;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700 !important;
+            transition: var(--transition);
+        }
+
+        .btn-nav-register:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(252, 252, 252, 0.95);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            padding: 0 15px;
+            max-width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: rgba(153, 21, 3, 0.95);
+            text-decoration: none;
+            white-space: nowrap; /* Giữ logo không bị bẻ chữ */
+        }
+
+        .logo-img {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 10px; /* Giảm khoảng cách giữa các nút */
+            align-items: center;
+            flex-wrap: nowrap; /* Buộc các nút nằm trên 1 hàng, không bị rớt dòng */
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: 0.85rem; /* Thu nhỏ nhẹ kích thước chữ menu để tiết kiệm diện tích */
+            color: rgb(252, 5, 5);
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 90vh;
+            background: linear-gradient(rgba(225, 240, 88, 0.4), rgba(251, 252, 250, 0.4)), url(https://vietenergy.com.vn/image/catalog/du-an/Han%20Quoc%20Tra%20Vinh/1.jpg) center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #1404f3;
+            padding: 10px 20px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-shadow: 4px 4px 8px rgba(27, 250, 38, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin: 40px auto;
+            max-width: 1300px;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+            width: 90%;
+        }
+
+        /* --- OVERVIEW / ABOUT --- */
+        .overview {
+            padding: 20px 0;
+            background-color: var(--light);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .overview-card {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .overview-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* --- ATTRACTIONS --- */
+        .attractions {
+            padding: 10px 0;
+        }
+
+        .attraction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            justify-content: center;
+            font-size: 1rem;
+            color: #f30707;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .attraction-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 480px;
+        }
+
+        .attraction-img {
+            height: 280px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .attraction-info {
+            padding: 10px 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .attraction-info h3 {
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .attraction-info p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #e70808;
+        }
+
+        /* --- TOURS & QUICK VIEW --- */
+        .tours {
+            padding: 10px 0;
+            background-color: var(--light);
+        }
+
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tour-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tour-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .tour-price {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .tour-footer {
+            padding: 6px 15px;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- GALLERY --- */
+        .gallery {
+            padding: 20px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-dark);
+            color: #fff;
+            padding: 5px 0 5px;
+            font-size: 0.95rem;
+            line-height: 1.3;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 5px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 5px;
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.2rem;
+            color: #c6d408;
+        }
+
+        /* --- MODAL POPUP SYSTEM --- */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .close-btn:hover {
+            color: var(--dark);
+        }
+
+        /* --- FORM STYLES --- */
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 5px rgba(0, 119, 182, 0.3);
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+        }
+
+        .form-actions a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .form-actions a:hover {
+            text-decoration: underline;
+        }
+
+        .form-switch-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .form-switch-link a {
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .form-switch-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            .hero-content h1 {
+                font-size: 1.5rem !important;
+            }
+            .hero-content p {
+                font-size: 0.95rem !important;
+            }
+            .card-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px;
+            }
+            .gallery-slider img {
+                min-width: 260px !important;
+                height: 180px !important;
+            }
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                font-size: 0.85rem;
+            }
+        }
+
+        .gallery-slider-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .gallery-slider {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 0;
+            scrollbar-width: none;
+        }
+
+        .gallery-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gallery-slider img {
+            min-width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-slider img:hover {
+            transform: scale(1.02);
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background: #007bff;
+        }
+
+        .prev-btn {
+            left: -20px;
+        }
+
+        .next-btn {
+            right: -20px;
+        }
+    .btn-admin-nav {
+    background-color: #dc3545;
+    color: #fff !important;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700 !important;
+}
+.btn-admin-nav:hover {
+    background-color: #a71d2a;
+}
+    </style>
+</head>
+<!-- Modal 7: Thông Báo Tùy Chỉnh (Thay thế alert) -->
+<div class="modal" id="custom-alert-modal">
+    <div class="modal-content" style="max-width: 400px; text-align: center;">
+        <span class="close-btn" onclick="closeCustomAlert()">&times;</span>
+        <div style="font-size: 3rem; color: var(--primary); margin-bottom: 10px;">
+            <i class="fa-solid fa-circle-check" id="alert-icon"></i>
+        </div>
+        <h3 id="alert-title" style="color: var(--primary-dark); margin-bottom: 10px; font-size: 1.3rem;">Thông Báo</h3>
+        <p id="alert-message" style="color: var(--dark); font-size: 1rem; margin-bottom: 20px; line-height: 1.5;"></p>
+        <button class="btn" onclick="closeCustomAlert()" style="width: 100%; border-radius: 6px;">OK</button>
+    </div>
+</div>
+<body>
+
+    <!-- 1. HEADER / NAVBAR -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LNHiwrx9v_kdswYXOB-lVkZJ7D9wR1q4luoFpWVliQ&s=10" alt="Logo Ba Động Travel" class="logo-img">
+                QUẢNG BÁ DU LỊCH BIỂN BA ĐỘNG - <span>TRÀ VINH</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#overview" class="nav-link">GIỚI THIỆU</a></li>
+                    <li><a href="#attractions" class="nav-link">ĐIỂM ĐẾN</a></li>
+                    <li><a href="#tours" class="nav-link">TOUR DU LỊCH</a></li>
+                    <li><a href="#gallery" class="nav-link">THƯ VIỆN ẢNH</a></li>
+                    
+                    <li><a href="javascript:void(0)" class="nav-link" onclick="openModal('quick-consult-modal')">LIÊN HỆ</a></li>
+                    
+                    <!-- Nút Đăng Nhập & Đăng Ký -->
+                    <li><a href="javascript:void(0)" class="nav-link btn-nav-login" onclick="openModal('login-modal')"><i class="fa-solid fa-right-to-bracket"></i> ĐĂNG NHẬP</a></li>
+                    <li><a href="javascript:void(0)" class="nav-link btn-nav-register" onclick="openModal('register-modal')"><i class="fa-solid fa-user-plus"></i> ĐĂNG KÝ</a></li>
+                <!-- Nút Quản trị -->
+<li><a href="admin.html" class="nav-link btn-admin-nav"><i class="fa-solid fa-user-shield"></i> QUẢN TRỊ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>KHÁM PHÁ BIỂN BA ĐỘNG</h1>
+            <p>Biển Ba Động không kiều diễm, tráng lệ nhưng lại có một sức hút dịu dàng, níu chân người ghé thăm bằng chính sự mộc mạc và phóng khoáng của đất và con người miền Tây.</p>
+            <p>Đến với Ba Động bạn sẽ được thưởng thức vị ngọt tự nhiên của các loại hải sản tươi roi rói. Những con tôm sú bóng mẩy, cua gạch chắc thịt, ốc biển giòn ngọt và rất nhiều đặc sản khác, để cảm nhận được sự hào phóng của biển cả và lòng hiếu khách của người dân nơi đây.</p>
+            <button class="btn" onclick="openModal('quick-consult-modal')"><i class="fa-solid fa-paper-plane"></i> Nhận Tư Vấn Lịch Trình</button>
+        </div>
+    </section>
+
+    <!-- 3. GIỚI THIỆU TỔNG QUAN -->
+    <section class="reasons-section" id="overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>NHỮNG ĐIỀU THÚ VỊ KHI ĐẾN VỚI BA ĐỘNG</h2>
+            </div>
+            <div class="card-grid">
+                <a href="bai-bien-hoang-so.html" class="reason-card">
+                    <i class="fa-solid fa-umbrella-beach card-icon"></i>
+                    <h3>BÃI BIỂN HOANG SƠ</h3>
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Bãi biển Ba Động" class="info-card-img">
+                    <p>Bãi cát trải dài miên man với những con sóng nhấp nhô cùng hàng phi lao rì rào, thích hợp cho chuyến đi chữa lành và thư giãn cuối tuần.</p>
+                </a>
+           
+                <a href="canh-dong-dien-gio.html" class="reason-card">
+                    <i class="fa-solid fa-wind card-icon"></i>
+                    <h3>CÁNH ĐỒNG ĐIỆN GIÓ</h3>
+                    <img src="https://vietenergy.com.vn/image/catalog/du-an/Han%20Quoc%20Tra%20Vinh/1.jpg" alt="Bãi biển Ba Động" class="info-card-img">
+                    <p>Điểm check-in "sống ảo" hiện đại bậc nhất nơi đây chính là cây cầu vàng và những cối xay gió khổng lồ vươn mình ra biển.</p>
+                </a>
+          
+                <a href="van-hoa-tin-nguong.html" class="reason-card">
+                    <i class="fa-solid fa-gopuram card-icon"></i>
+                    <h3>VĂN HÓA VÀ TÍN NGƯỠNG</h3>
+                    <img src="https://mia.vn/media/uploads/blog-du-lich/du-lich-tra-vinh-9-1693239173.jpg" alt="Văn hóa Ba Động" class="info-card-img">
+                    <p>Khám phá truyền thuyết Ba Động, tín ngưỡng Bà Cố Hỷ linh thiêng và các lễ hội sông nước miền Tây đậm chất địa phương.</p>
+                </a>
+        
+                <a href="am-thuc-dac-san.html" class="reason-card">
+                    <i class="fa-solid fa-utensils card-icon"></i>
+                    <h3>ẨM THỰC VÀ ĐẶC SẢN</h3>
+                    <img src="https://i1-dulich.vnecdn.net/2016/01/21/chu-u-rang-me-5766-1453361379.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=FxQritbhdsSJ5w5Am93Tfw" alt="Bãi biển Ba Động" class="info-card-img">
+                    <p>Thưởng thức vị ngọt tự nhiên của các loại hải sản tươi sống nơi đây, với những món đặc sản như Chù ụ rang me, Mắm rươi và Nghêu Ba Động.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TRANG ĐIỂM ĐẾN NỔI BẬT -->
+    <section class="attractions" id="attractions">
+        <div class="container">
+            <div class="section-title">
+                <h2>ĐIỂM THAM QUAN LÂN CẬN</h2>
+            </div>
+            <div class="attraction-grid">
+                <div class="attraction-card">
+                    <img src="https://ticotravel.com.vn/wp-content/uploads/2024/08/thien-vien-truc-lam-tra-vinh-1.jpg" alt="Thiền viện Trúc Lâm" class="attraction-img">
+                    <div class="attraction-info">
+                        <h3>THIỀN VIỆN TRÚC LÂM</h3>
+                        <p>Cách biển Ba Động khoảng vài phút di chuyển, Ngôi thiền viện thuộc dòng phái Trúc Lâm tọa lạc sát biển. Không gian tại đây rất thanh tĩnh, rợp bóng cây xanh với chánh điện nguy nga, là điểm đến tâm linh yên bình cho du khách.</p>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <img src="https://mia.vn/media/uploads/blog-du-lich/ghe-tham-chua-hang-tra-vinh-ngoi-chua-duy-nhat-co-san-chim-1706425367.jpg" alt="Miếu Bà Cố Hỷ" class="attraction-img">
+                    <div class="attraction-info">
+                        <h3>MIẾU BÀ CỐ HỶ</h3>
+                        <p>Nằm ngay khu vực ven biển Ba Động, Miếu bà Cố Hỷ chính là điểm tựa tâm linh của ngư dân vùng biển Duyên Hải. Du khách đến đây thường thắp hương cầu bình an, may mắn và tìm hiểu về tín ngưỡng dân gian mở cõi của người dân xứ biển.</p>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <img src="https://image.sggp.org.vn/w680/Uploaded/2026/zotnae/2025_02_03/du-lich-con-chim-3593-6471.jpg.webp" alt="KDL Cồn Chim" class="attraction-img">
+                    <div class="attraction-info">
+                        <h3>KDL CỘNG ĐỒNG CỒN CHIM</h3>
+                        <p>Khu du lịch cộng đồng Cồn Chim được vinh dự nhận giải thưởng Du lịch Asean 2025, đây là điểm đến sinh thái nổi tiếng với mô hình "du lịch thuận thiên" - sống hòa hợp với thiên nhiên, giữ gìn nét văn hóa bình dị và hiếu khách của người dân vùng đồng bằng sông Cửu Long.</p>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <img src="https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/08_2023/canh_dep_hut_khach.jpg" alt="Khu du lịch Rừng Đước" class="attraction-img">
+                    <div class="attraction-info">
+                        <h3>KHU DU LỊCH RỪNG ĐƯỚC</h3>
+                        <p>Khu du lịch sinh thái Rừng Đước Trà Vinh là một điểm bảo tồn rừng ngập mặn rộng gần 700ha, cách biển Ba Động khoảng 7km. Nơi đây nổi bật với không gian xanh mát, hệ động thực vật phong phú và trải nghiệm đi xuồng, thuyền khám phá thiên nhiên hoang sơ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TOUR & XEM NHANH -->
+    <section class="tours" id="tours">
+        <div class="container">
+            <div class="section-title">
+                <h2>GỢI Ý LỊCH TRÌNH</h2>
+            </div>
+            <div class="tour-grid">
+                <div class="tour-card">
+                    <div class="tour-body">
+                        <h3>Tour 1 Ngày: Khám Phá Nhanh Ba Động</h3>
+                        <p class="tour-price">550.000 VNĐ / Khách</p>
+                        <p>Thích hợp cho du khách đi từ TP.HCM hoặc Cần Thơ về trong ngày. Bao gồm ăn trưa hải sản.</p>
+                    </div>
+                    <div class="tour-footer">
+                        <button class="btn btn-outline" onclick="openModal('tour1-modal')">Xem Nhanh</button>
+                        <button class="btn" onclick="openModal('quick-consult-modal')">Đặt Tour</button>
+                    </div>
+                </div>
+
+                <div class="tour-card">
+                    <div class="tour-body">
+                        <h3>Tour 2N1Đ: Đón Bình Minh & Điện Gió</h3>
+                        <p class="tour-price">1.500.000 VNĐ / Khách</p>
+                        <p>Trải nghiệm trọn vẹn đêm nghỉ tại Homestay ven biển, đốt lửa trại và ngắm bình minh tuyệt đẹp.</p>
+                    </div>
+                    <div class="tour-footer">
+                        <button class="btn btn-outline" onclick="openModal('tour2-modal')">Xem Nhanh</button>
+                        <button class="btn" onclick="openModal('quick-consult-modal')">Đặt Tour</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. THƯ VIỆN CẢM HỨNG -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">KHOẢNH KHẮC BA ĐỘNG</h2>
+            <div class="gallery-slider-container">
+                <button class="slider-btn prev-btn" id="prevBtn">&#10094;</button>
+                <div class="gallery-slider" id="gallerySlider">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Ảnh 1">
+                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80" alt="Ảnh 2">
+                    <img src="https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/08_2023/canh_dep_hut_khach.jpg" alt="Ảnh 3">
+                    <img src="https://image.sggp.org.vn/w680/Uploaded/2026/zotnae/2025_02_03/du-lich-con-chim-3593-6471.jpg.webp" alt="Ảnh 4">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPQNVw4i_445b-swQqIWfDebGTgwZG9brJGnTGF2A_RA&s=10" alt="Ảnh 5">
+                    <img src="https://vietenergy.com.vn/image/catalog/du-an/Han%20Quoc%20Tra%20Vinh/1.jpg" alt="Ảnh 6">
+                    <img src="https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/04_2022/binh-minh-tren-bien.jpg" alt="Ảnh 7">
+                    <img src="https://media.vneconomy.vn/images/upload/2024/05/10/hinh-1.jpg?w=1200" alt="Ảnh 8">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLfGYRslQ3Wxptjy37egSplKHbR0r_xa7WFw-ZcYtYAQ&s=10" alt="Ảnh 9">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnPm5G8YYW7_zUOJkBRVu7-vRoZ-r0RyQ8ReaJ-DIcIA&s=10" alt="Ảnh 10">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyATJ-q65QCk6vCfExKUWwr4fvDgA-7HV6S6N9l7jcBA&s=10" alt="Ảnh 11">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-BHBtVnzzNSbF1UenZUgngy-mk-Zb3pPyrneJaEB68g&s=10" alt="Ảnh 12">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsIqqIhAz_GHHhMa9GUXZvKRMsohjgoD2nWyKhZD6NDQ&s=10" alt="Ảnh 13">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBYq_2z0lYp5h_43Rbhv0gAmmxNhvTqVqKriYqManI0A&s=10" alt="Ảnh 14">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvDJJGiIJDAg3b_V3CxwOuAK8Axt34RqiKa7uFX1_nSQ&s=10" alt="Ảnh 15">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMQblj-zRoFTy4w4E46oHKk5IiZQb7PVLXe1YqK1G1jA&s=10" alt="Ảnh 16">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSzD1YDCbJBERHJAL6y3Rdz0naWgJ4LrqlS6ZYGj-MnQ&s=10" alt="Ảnh 17">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkabEtx2ZohAvY394s-XbMXEkBK_XLOEvrPSqdRNq87w&s=10" alt="Ảnh 18">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv_3wEl58sAYSaLSq4DpR-3Q-LOHMxYWuRaLewKJVbOw&s=10" alt="Ảnh 19">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1bxD3I2lSlOtD-2nI4dMyUmd2HA9gW6xk5reWSWniew&s=10" alt="Ảnh 20">
+                    <img src="https://ticotravel.com.vn/wp-content/uploads/2023/12/ba-dong-tra-vinh-2.jpg" alt="Ảnh 22">
+                    <img src="https://ticotravel.com.vn/wp-content/uploads/2023/12/ba-dong-tra-vinh-7.jpg" alt="Ảnh 23">
+                    <img src="https://ticotravel.com.vn/wp-content/uploads/2023/12/ba-dong-tra-vinh-14.jpg" alt="Ảnh 24">
+                    <img src="https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/04_2022/binh-minh-tren-bien.jpg" alt="Ảnh 25">
+                    <img src="https://mia.vn/media/uploads/blog-du-lich/ao-ba-om-03-1699921853.jpg" alt="Ảnh 26">
+                    <img src="https://mia.vn/media/uploads/blog-du-lich/ao-ba-om-02-1699921853.jpg" alt="Ảnh 27">
+                    <img src="https://mia.vn/media/uploads/blog-du-lich/ao-ba-om-06-1699921852.jpg" alt="Ảnh 28">
+                    <img src="https://mia.vn/media/uploads/blog-du-lich/ao-ba-om-08-1699921921.jpg" alt="Ảnh 29">
+                    <img src="https://mia.vn/media/uploads/blog-du-lich/vi-tri-dia-ly-1706021909.jpg" alt="Ảnh 30">
+                    <img src="https://thamhiemmekong.com/wp-content/uploads/2020/04/chuacotravinh.jpg" alt="Ảnh 31">
+                    <img src="https://mia.vn/media/uploads/blog-du-lich/chol-chnam-thmay-quy-mo-le-hoi-1721618960.jpg" alt="Ảnh 32">
+                    <img src="https://cly.1cdn.vn/2021/10/01/dantoctongiao.congly.vn-upload-content_img-2021-1001-_nhung-chiec-den-gio-lam-sang-ruc-ca-vung-troi-trong-ngay-le-ok-om-bok-anh-i_anh_2.png" alt="Ảnh 33">
+                    <img src="https://i1-dulich.vnecdn.net/2024/11/14/462540823-1271084914238497-5055516399491276500-n-1731551585.png?w=1200&h=0&q=100&dpr=1&fit=crop&s=cfZUcivRl6wtd2fq5mO3rg" alt="Ảnh 34">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSazAwCAl4cYLX-6ySrEh8j4RsrPfxVwuaAOHSM4B3PyQ&s=10" alt="Ảnh 35">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzQk9z5qybhBKBplV4kYkoO5X94dUFE6HE-bHCCJIF3Q&s=10" alt="Ảnh 36">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrnGP3wtt23TMRXWa96MurSMqjVtskWJaBQXcSte51wQ&s=10" alt="Ảnh 37">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvjqrGZENjBzt8fMdpRvStFQrwZYyLjoOGbtFnRv4IEQ&s=10" alt="Ảnh 38">
+                    <img src="https://tuyphuocdong.gialai.gov.vn/upload/105754/fck/ubnd/Du%20kh%C3%A1ch%20ch%C3%A8o%20s%C3%BAp%20tr%C3%AAn%20khu%20sinh%20th%C3%A1i%20C%E1%BB%93n%20Chim.jpg" alt="Ảnh 39">
+                    <img src="https://tuyphuocdong.gialai.gov.vn/upload/105754/fck/ubnd/Du%20kh%C3%A1ch%20tham%20quan%20tr%E1%BA%A3i%20nghi%E1%BB%87m%20tr%C3%AAn%20KST%20C%E1%BB%93n%20Chim.jpg" alt="Ảnh 40">
+                </div>
+                <button class="slider-btn next-btn" id="nextBtn">&#10095;</button>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- 8. FOOTER -->
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Quảng Bá Du Lịch Biển Ba Động</h4>
+                <p>Website chính thức hỗ trợ thông tin, lịch trình và trải nghiệm du lịch sinh thái tại Biển Ba Động</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên Hệ Support</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Xã Trường Long Hòa, TX. Duyên Hải, tỉnh Trà Vinh (Nay là P. Trường Long Hòa, tỉnh Vĩnh Long)</p>
+                <p><i class="fa-solid fa-phone"></i> Hotine: 038 988 4845</p>
+                <p><i class="fa-solid fa-envelope"></i> Email: tamttm020984@tvu-onschool.edu.vn</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Báo cáo Chuyên đề ASP.NET - Xây dựng website quảng bá du lịch biển Ba động</p>
+        </div>
+    </footer>
+
+    <!-- ==================== HỆ THỐNG MODAL POPUPS ==================== -->
+
+    <!-- Modal 1: Xem nhanh Tour 1 Ngày -->
+    <div class="modal" id="tour1-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('tour1-modal')">&times;</span>
+            <h2>Lịch Trình Tóm Tắt (Tour 1 Ngày)</h2>
+            <hr style="margin: 15px 0;">
+            <ul>
+                <li><strong>07:00:</strong> Đón khách tại Trung tâm Phường Trà Vinh.</li>
+                <li><strong>08:30:</strong> Tham quan Thiền Viện Trúc Lâm và Cánh đồng điện gió Duyên Hải.</li>
+                <li><strong>11:30:</strong> Dùng cơm trưa tại nhà hàng ven biển Ba Động (Thưởng thức Chù ụ, Tôm chà).</li>
+                <li><strong>14:00:</strong> Tự do tắm biển, check-in đồi cát.</li>
+                <li><strong>16:30:</strong> Khởi hành về lại điểm đón ban đầu.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 2: Xem nhanh Tour 2N1Đ -->
+    <div class="modal" id="tour2-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('tour2-modal')">&times;</span>
+            <h2>Lịch Trình Tóm Tắt (Tour 2N1Đ)</h2>
+            <hr style="margin: 15px 0;">
+            <p><strong>Ngày 1:</strong> TP.HCM/Trà Vinh - Rừng Đước - Điện Gió - Đốt lửa trại ngắm biển đêm.</p>
+            <p><strong>Ngày 2:</strong> Đón bình minh trên biển Ba Động - Thưởng thức hải sản - Mua đặc sản Mắm Rươi / Bánh tét Trà Cuôn - Kết thúc.</p>
+        </div>
+    </div>
+
+    <!-- Modal 3: Form Đăng Ký Tư Vấn Nhanh -->
+    <div class="modal" id="quick-consult-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('quick-consult-modal')">&times;</span>
+            <h2>Đăng Ký Tư Vấn Chuyến Đi</h2>
+            <form style="margin-top: 15px;" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Họ và Tên:</label>
+                    <input type="text" required placeholder="Nhập họ và tên">
+                </div>
+                <div class="form-group">
+                    <label>Số Điện Thoại / Zalo:</label>
+                    <input type="tel" required placeholder="Nhập số điện thoại">
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Gửi Yêu Cầu</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 4: Form Đăng Nhập -->
+   <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('login-modal')">&times;</span>
+            <h2 style="margin-bottom: 20px; color: var(--primary-dark);">ĐĂNG NHẬP HỆ THỐNG</h2>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Họ và tên hiển thị:</label>
+                    <input type="text" id="loginName" required placeholder="Nhập tên của bạn...">
+                </div>
+                <div class="form-group">
+                    <label>Email đăng nhập:</label>
+                    <input type="email" id="loginEmail" required placeholder="Nhập email của bạn...">
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu:</label>
+                    <input type="password" id="loginPassword" required placeholder="Nhập mật khẩu...">
+                </div>
+                <button type="submit" class="btn" style="width: 100%; font-size: 1rem; border-radius: 6px;">Đăng Nhập</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 5: Form Đăng Ký Tài Khoản -->
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('register-modal')">&times;</span>
+            <h2 style="color: var(--primary-dark); text-align: center;">Đăng Ký Tài Khoản</h2>
+            <p style="text-align: center; color: var(--gray); font-size: 0.9rem; margin-bottom: 15px;">Đăng ký để nhận ưu đãi tour và quản lý lịch trình dễ dàng</p>
+            
+            <form onsubmit="handleRegisterSubmit(event)">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Họ và Tên:</label>
+                    <input type="text" id="reg-fullname" required placeholder="Nguyễn Văn A">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Email:</label>
+                    <input type="email" id="reg-email" required placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-phone"></i> Số điện thoại:</label>
+                    <input type="tel" id="reg-phone" required placeholder="0901234567">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Mật khẩu:</label>
+                    <input type="password" id="reg-password" required placeholder="Tối thiểu 6 ký tự" minlength="6">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-shield-halved"></i> Xác nhận mật khẩu:</label>
+                    <input type="password" id="reg-confirm-password" required placeholder="Nhập lại mật khẩu" minlength="6">
+                </div>
+                <button type="submit" class="btn" style="width: 100%; font-size: 1.2rem; margin-top: 10px;">Đăng Ký Ngay</button>
+            </form>
+
+            <div class="form-switch-link">
+                Đã có tài khoản? <a href="javascript:void(0)" onclick="switchModal('register-modal', 'login-modal')">Đăng nhập ngay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6: Phóng To Hình Ảnh (Lightbox) -->
+    <div class="modal" id="image-modal">
+        <div class="modal-content" style="background: transparent; box-shadow: none; max-width: 900px; text-align: center;">
+            <span class="close-btn" onclick="closeModal('image-modal')" style="color: #fff;">&times;</span>
+            <img id="lightbox-img" src="" alt="Zoom" style="max-width: 100%; max-height: 80vh; border-radius: 8px;">
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT TƯƠNG TÁC ==================== -->
+    <script>
+        // Xử lý slider thư viện ảnh
+        const slider = document.getElementById('gallerySlider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const scrollAmount = 420; 
+
+        if (nextBtn && prevBtn && slider) {
+            nextBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+        }
+
+        // Tự động điền sẵn tên nếu user đã đăng nhập
+        window.addEventListener('DOMContentLoaded', () => {
+            renderUserInfo();
+        });
+
+      // Sửa hàm mở Modal để tự động reset form nếu đó là modal Đăng nhập hoặc Đăng ký
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('active');
+            
+            // Nếu mở modal Đăng nhập hoặc Đăng ký thì reset/xóa sạch dữ liệu cũ bên trong
+            if (modalId === 'login-modal' || modalId === 'register-modal' || modalId === 'quick-consult-modal') {
+                const form = modal.querySelector('form');
+                if (form) {
+                    form.reset();
+                }
+            }
+        }
+
+        // Hàm đóng Modal Popup
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('active');
+            
+            // Đồng thời reset luôn form khi đóng modal
+            const form = modal.querySelector('form');
+            if (form) {
+                form.reset();
+            }
+        }
+
+        // Chuyển đổi giữa 2 Modal (Ví dụ từ Đăng nhập -> Đăng ký)
+        function switchModal(fromModalId, toModalId) {
+            closeModal(fromModalId);
+            setTimeout(() => {
+                openModal(toModalId);
+            }, 200);
+        }
+
+        // Hàm mở Modal Phóng To Ảnh (Lightbox)
+        function openImageModal(imgSrc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            openModal('image-modal');
+        }
+
+        // Xử lý Form đăng ký tư vấn
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            showCustomAlert('Đăng Ký Thành Công', 'Cảm ơn bạn đã gửi yêu cầu! BQL Du lịch Ba Động sẽ liên hệ tư vấn trong thời gian sớm nhất.');
+            closeModal('quick-consult-modal');
+            event.target.reset();
+        }
+
+        // Hiển thị trạng thái người dùng trên Navbar
+        function renderUserInfo() {
+            const userJson = localStorage.getItem("currentUser");
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (!navMenu) return;
+
+            if (userJson) {
+                const user = JSON.parse(userJson);
+                let userStatusLi = document.getElementById('user-status-container');
+                
+                if (!userStatusLi) {
+                    userStatusLi = document.createElement('li');
+                    userStatusLi.id = 'user-status-container';
+                    navMenu.appendChild(userStatusLi);
+                }
+
+                userStatusLi.innerHTML = `
+                    <span class="nav-link" style="color: var(--primary-dark); font-weight: 700;">
+                        <i class="fa-solid fa-user-check"></i> Chào, ${user.name}
+                    </span>
+                    <a href="javascript:void(0)" class="nav-link btn-nav-login" onclick="handleLogout()" style="margin-left: 5px; background: #e70808; color: #fff !important; border: none;">Đăng Xuất</a>
+                `;
+
+                const authButtons = navMenu.querySelectorAll('.btn-nav-login, .btn-nav-register');
+                authButtons.forEach(btn => {
+                    if(btn.parentElement !== userStatusLi) btn.style.display = 'none';
+                });
+            }
+        }
+
+        // Xử lý Đăng xuất
+        function handleLogout() {
+            localStorage.removeItem("currentUser");
+            location.reload(); 
+        }
+
+        // Xử lý Form Đăng Nhập
+        function handleLogin(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('loginEmail').value;
+            const passwordInput = document.getElementById('loginPassword').value;
+
+            // Kiểm tra xem đã có tài khoản đăng ký trong localStorage chưa
+            const registeredUserJson = localStorage.getItem("registeredUser");
+            
+            if (registeredUserJson) {
+                const regUser = JSON.parse(registeredUserJson);
+                if (regUser.email === emailInput && regUser.password === passwordInput) {
+                    const user = {
+                        name: regUser.name,
+                        email: regUser.email,
+                        loginTime: new Date().toISOString()
+                    };
+                    localStorage.setItem("currentUser", JSON.stringify(user));
+                    
+                    event.target.reset();
+                    closeModal('login-modal');
+                    renderUserInfo(); 
+                    showCustomAlert('Đăng Nhập Thành Công', 'Chào mừng trở lại, ' + user.name + '!');
+                    return;
+                }
+            }
+
+            const nameInput = document.getElementById('loginName') ? document.getElementById('loginName').value : "Thành viên";
+            const user = {
+                name: nameInput,
+                email: emailInput,
+                loginTime: new Date().toISOString()
+            };
+
+            localStorage.setItem("currentUser", JSON.stringify(user));
+            event.target.reset();
+            closeModal('login-modal');
+            renderUserInfo(); 
+            showCustomAlert('Đăng Nhập Thành Công', 'Chào mừng trở lại, ' + user.name + '!');
+        }
+
+        // Xử lý Form Đăng Ký Tài Khoản
+        function handleRegisterSubmit(event) {
+            event.preventDefault();
+            
+            const fullname = document.getElementById('reg-fullname').value;
+            const email = document.getElementById('reg-email').value;
+            const phone = document.getElementById('reg-phone').value;
+            const password = document.getElementById('reg-password').value;
+            const confirmPassword = document.getElementById('reg-confirm-password').value;
+
+            if (password !== confirmPassword) {
+                showCustomAlert('Lỗi Đăng Ký', 'Mật khẩu xác nhận không khớp! Vui lòng kiểm tra lại.');
+                return;
+            }
+
+            let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+            const existingUser = registeredUsers.find(u => u.email === email);
+            if (existingUser) {
+                showCustomAlert('Lỗi Đăng Ký', 'Email này đã được đăng ký tài khoản trước đó!');
+                return;
+            }
+
+            const newUser = {
+                name: fullname,
+                email: email,
+                phone: phone,
+                password: password,
+                date: new Date().toLocaleDateString('vi-VN')
+            };
+            
+            registeredUsers.push(newUser);
+            localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
+            localStorage.setItem("registeredUser", JSON.stringify(newUser));
+
+            closeModal('register-modal');
+
+            document.getElementById('loginEmail').value = email;
+            if(document.getElementById('loginName')) {
+                document.getElementById('loginName').value = fullname;
+            }
+
+            event.target.reset();
+
+            setTimeout(() => {
+                showCustomAlert('Đăng Ký Thành Công', `Chúc mừng ${fullname}! Bạn đã đăng ký tài khoản thành công. Vui lòng đăng nhập.`);
+            }, 200);
+        }
+
+        // Đóng Modal khi click ra ngoài vùng nội dung modal
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            }
+        }
+
+        // Hàm hiển thị hộp thông báo tùy chỉnh
+        function showCustomAlert(title, message) {
+            document.getElementById('alert-title').innerText = title;
+            document.getElementById('alert-message').innerText = message;
+            openModal('custom-alert-modal');
+        }
+
+        // Hàm đóng hộp thông báo
+        function closeCustomAlert() {
+            closeModal('custom-alert-modal');
+        }
+    </script>
+    
+</body>
+</html>

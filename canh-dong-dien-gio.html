@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám phá cánh đồng điện gió Ba Động | Tọa Độ Check-in Siêu Hót</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0077b6;
+            --primary-dark: #023e8a;
+            --accent: #f77f00;
+            --light-bg: #f8f9fa;
+            --text-color: #2b2d42;
+            --text-muted: #6c757d;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            background-color: #fff;
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .back-btn {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: var(--accent); }
+
+        .article-header { padding: 40px 0 20px; }
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .article-title {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+
+        .article-content p {
+            display: block !important;
+            text-indent: 30px !important;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .article-content blockquote p { text-indent: 0 !important; }
+
+        .featured-image-container { margin-bottom: 35px; }
+        .featured-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 8px;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2.8fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .main-content p { margin-bottom: 20px; font-size: 1.05rem; }
+        .main-content h2 {
+            font-size: 1.2rem;
+            margin-top: 35px;
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        .highlight-box {
+            background-color: #e0f2fe;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .info-card {
+            background-color: var(--light-bg);
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .info-list { list-style: none; width: 100%; }
+        .info-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.85rem;
+            text-align: justify;
+        }
+        .info-list i { color: var(--primary); margin-top: 4px; }
+
+        .btn-booking {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn-booking:hover { background-color: #e85d04; }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper { grid-template-columns: 1fr; }
+            .article-title { font-size: 1.5rem; }
+            .featured-image { height: 280px; }
+            .sidebar { position: static; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LNHiwrx9v_kdswYXOB-lVkZJ7D9wR1q4luoFpWVliQ&s=10" alt="Logo Ba Động Travel" class="logo-img">
+                <span>DU LỊCH BIỂN BA ĐỘNG TRÀ VINH</span>
+            </a>
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Quay lại Trang chủ</a>
+        </div>
+    </header>
+
+    <!-- 2. ARTICLE HEADER -->
+    <main class="container">
+        <section class="article-header">
+            <div class="breadcrumb">
+                <a href="index.html">Trang chủ</a> / 
+                <a href="index.html#overview">Giới thiệu</a> / 
+                <span>Cánh Đồng Điện Gió Ba Động</span>
+            </div>
+            <h1 class="article-title">Khám phá cánh đồng điện gió Ba Động</h1>
+            <h1 class="article-title">Tọa độ check-in "sống ảo" cực chất</h1>
+            <div class="article-meta">
+                <span><i class="fa-regular fa-calendar"></i> Cập nhật: 2026</span>
+                <span><i class="fa-solid fa-location-dot"></i> Xã Trường Long Hòa, TX. Duyên Hải, tỉnh Trà Vinh (Nay là P. Trường Long Hòa, tỉnh Vĩnh Long)</span>
+            </div>
+        </section>
+
+        <!-- 3. FEATURED IMAGE -->
+        <div class="featured-image-container">
+            <img src="https://media.vneconomy.vn/images/upload/2024/05/10/hinh-1.jpg?w=1200" alt="Canh dong dien gio" class="featured-image">
+            <p class="image-caption">Những cối xay gió khổng lồ vươn mình ra biển khơi tại cánh đồng điện gió Ba Động.</p>
+        </div>
+
+        <!-- 4. CONTENT & SIDEBAR -->
+        <div class="content-wrapper">
+            <article class="main-content article-content">
+                <p style="text-align: justify; text-indent: 30px;">Tọa lạc tại vùng biển Trường Long Hòa, <strong>Cánh đồng điện gió Ba Động</strong> không chỉ là công trình năng lượng sạch mang tầm vóc phát triển hiện đại mà còn trở thành biểu tượng du lịch mới đầy thu hút của tỉnh Trà Vinh (nay là tỉnh Vĩnh Long). Với không gian khoáng đạt cùng bờ cầu dẫn biển dài ngoằn ngoèo, nơi đây mang đến trải nghiệm check-in phong cách Châu Âu vô cùng ấn tượng.</p>
+
+                <h2>1. Vẻ đẹp hiện đại giao hòa cùng thiên nhiên biển cả</h2>
+                <p style="text-align: justify; text-indent: 30px;">Nếu bãi biển Ba Động thu hút du khách bởi sự hoang sơ, mộc mạc thì cánh đồng điện gió lại mang đến nét hiện đại, trẻ trung. Hàng chục tua-bin gió cao sừng sững với những cánh quạt khổng lồ quay đều trong gió biển, tạo nên khung cảnh tráng lệ giữa làn nước biển mặn mòi và bầu trời trong xanh.</p>
+                
+                <img src="https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/04_2022/tru-tua-bin-mau-trang.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Góc nhìn cận cảnh cối xay gió vươn cao trên biển.</p>
+
+                <div class="highlight-box">
+                    "Điểm nhấn độc đáo nhất tại đây chính là cây cầu dẫn bằng bê tông vươn xa ra lòng biển, đưa du khách tiến gần hơn tới các tua-bin gió khổng lồ để bắt trọn những khung hình đỉnh cao."
+                </div>
+                <p style="text-align: justify; text-indent: 30px;">Hình ảnh đẹp nhất ở cánh đồng điện gió Ba Động chính là cây cầu màu vàng nổi bật. Cây cầu dẫn này dài hơn 4 cây số giúp bạn đi đến nơi lắp đặt các trụ tua-bin gió nối liền nhau và có thể được quan sát từ xa, phía biển Ba Động và đã tạo ra hàng nghìn bức ảnh tuyệt đẹp khiến công trình này trở thành địa điểm sống ảo hot nhất Trà Vinh.</p>
+                
+                <img src="https://vietenergy.com.vn/image/catalog/du-an/Han%20Quoc%20Tra%20Vinh/1.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                <p class="image-caption" style="text-align: center;">Cây cầu dẫn màu vàng nổi bật</p>
+
+                <h2>2. Thời điểm lý tưởng để ghé thăm và chụp ảnh</h2>
+                <p style="text-align: justify; text-indent: 30px;">Để có những bức hình "sống ảo" xuất sắc nhất, bạn nên đến cánh đồng điện gió vào hai khoảng thời gian trong ngày:</p>
+                <ul style="padding-left: 0; list-style-position: inside;">
+                    <li style="text-indent: 25px; text-align: justify; line-height: 1.8;">
+                        <strong>Bình minh (5:30 - 7:00):</strong> Khi ánh mặt trời vừa nhô lên phản chiếu ánh hồng cam kỳ ảo xuống mặt biển, không khí mát rượi và vắng vẻ.
+                    </li>
+                    <img src="https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/04_2022/binh-minh-tren-bien.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                    <p class="image-caption" style="text-align: center;">Bình minh trên biển Ba Động</p>
+                    <li style="text-indent: 25px; text-align: justify; line-height: 1.8;">
+                        <strong>Hoàng hôn (16:30 - 18:00):</strong> Nắng chiều dịu nhẹ buông xuống tô điểm cho những cánh quạt gió vẻ đẹp trầm mặc, thơ mộng tuyệt đẹp.
+                    </li>
+                    <img src="https://thamhiemmekong.com/wp-content/uploads/2020/04/bienbadong1.jpg" alt="Tua bin điện gió Ba Động" class="featured-image">
+                    <p class="image-caption" style="text-align: center;">Buổi chiều hoàng hôn trên biển Ba Động</p>
+                </ul>
+
+                <h2>3. Những hoạt động không thể bỏ lỡ</h2>
+                <p style="text-align: justify; text-indent: 30px;">Đến với cánh đồng điện gió Ba Động, du khách sẽ được trải nghiệm nhiều hoạt động hấp dẫn:</p>
+                <ul style="padding-left: 0; list-style-position: inside;">
+                    <li style="text-indent: 25px; text-align: justify; line-height: 1.8;">
+                        <strong>Sưu tầm bộ ảnh check-in cực chất:</strong> Dạo bước trên cầu dẫn ra biển, lưu giữ khoảnh khắc cùng cối xay gió khổng lồ với nhiều góc máy "triệu view".
+                    </li>
+                    <li style="text-indent: 25px; text-align: justify; line-height: 1.8;">
+                        <strong>Tận hưởng làn gió biển mát lành:</strong> Cảm nhận sức mạnh của gió biển miền Tây và thư giãn không khí trong lành, xua tan mọi mệt mỏi phố thị.
+                    </li>
+                    <li style="text-indent: 25px; text-align: justify; line-height: 1.8;">
+                        <strong>Kết hợp khám phá ẩm thực biển:</strong> Sau khi tham quan, du khách có thể di chuyển ra bãi biển Ba Động gần đó để thưởng thức đặc sản Chù ụ rang me, nghêu hấp sả, tôm sú tươi ngon tại chỗ.
+                    </li>
+                </ul>
+            </article>
+
+            <aside class="sidebar">
+                <div class="info-card">
+                    <h3>Thông tin tham quan</h3>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fa-solid fa-wind"></i>
+                            <div><strong>Địa điểm:</strong> Xã Trường Long Hòa, TX. Duyên Hải, tỉnh Trà Vinh (Nay là P. Trường Long Hòa, tỉnh Vĩnh Long)</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clock"></i>
+                            <div><strong>Giờ mở cửa:</strong> Tự do tham quan cả ngày.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-ticket"></i>
+                            <div><strong>Vé tham quan:</strong> Miễn phí (hoặc phí gửi xe nhỏ tùy điểm giữ).</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-sun"></i>
+                            <div><strong>Thời điểm đẹp nhất:</strong> Tháng 10 đến tháng 4 năm sau.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <div><strong>Mẹo nhỏ:</strong> Mang theo mũ rộng vành, kính mát và mặc trang phục màu nổi (trắng, vàng, đỏ).</div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Trang Quảng bá du lịch Biển Ba Động tỉnh Trà Vinh (nay là tỉnh Vĩnh Long)</p>
+        </div>
+    </footer>
+</body>
+</html>

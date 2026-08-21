@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ẨM THỰC BIỂN BA ĐỘNG TRÀ VINH</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --secondary: #d97706;
+            --accent: #dc2626;
+            --bg-light: #f8fafc;
+            --surface: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .brand-font { font-family: 'Merriweather', serif; }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border);
+        }
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            height: 70px; 
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        .logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+        .back-btn {
+            color: #6b21a8;
+            text-decoration: underline;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .back-btn:hover { color: var(--primary); }
+
+        /* Article Header Section */
+        .article-header {
+            padding: 20px 0 10px 0;
+        }
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+        .breadcrumb a {
+            color: #6b21a8;
+            text-decoration: underline;
+        }
+        .article-title {
+            text-align: center;
+            color: var(--accent);
+            font-size: 2.2rem;
+            font-weight: 700;
+            font-style: italic;
+            margin: 8px 0;
+            text-transform: uppercase;
+        }
+        .article-meta {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* Featured Section */
+        #gioi-thieu { padding: 10px 0 30px 0; }
+        .featured-card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid var(--border);
+        }
+        .featured-img-container { position: relative; min-height: 320px; }
+        .featured-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .featured-body { 
+            padding: 35px; 
+            background-color: #0f172a; 
+            color: white; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+        }
+        .featured-text {
+            font-size: 0.95rem; 
+            color: #cbd5e1; 
+            line-height: 1.7;
+            text-align: justify;
+        }
+        .quote-box { 
+            background: rgba(255, 255, 255, 0.05); 
+            border-left: 4px solid var(--secondary); 
+            padding: 15px 20px; 
+            font-style: italic; 
+            color: #f1f5f9; 
+            margin-top: 20px; 
+        }
+
+        /* Section Title */
+        .section-header { text-align: center; margin: 30px 0 25px 0; }
+        .section-title { font-size: 1.8rem; color: var(--accent); text-transform: uppercase; text-align: center; }
+
+        /* Food Grid & Cards */
+        #dac-san { padding: 20px 0 40px 0; background-color: #fff; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 25px; 
+        }
+        .food-card { 
+            background: var(--surface); 
+            border-radius: var(--radius); 
+            overflow: hidden; 
+            border: 1px solid var(--border); 
+            display: flex; 
+            flex-direction: column; 
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: justify;
+        }
+        .food-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .food-img { height: 200px; position: relative; }
+        .food-img img { width: 100%; height: 100%; object-fit: cover; }
+        .food-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .food-title { font-size: 1.3rem; margin-bottom: 8px; color: var(--primary-dark); text-align: center; }
+        .food-desc { color: var(--text-muted); font-size: 0.925rem; flex-grow: 1; line-height: 1.6; }
+
+        /* Article Detail Section */
+        #bai-viet-chi-tiet {
+            padding: 30px 0 50px 0;
+            background-color: var(--surface);
+        }
+        .article-block {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .sub-heading {
+            margin: 35px 0 12px 0;
+            font-size: 1.35rem;
+            color: var(--primary-dark);
+        }
+        .article-text {
+            text-align: justify;
+            text-indent: 30px;
+            font-size: 1.08rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+        .article-img-wrapper {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .article-img-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+        .image-caption {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer { 
+            background: #0284c7; 
+            color: #ffffff; 
+            padding: 25px 0; 
+            text-align: center; 
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .featured-card { grid-template-columns: 1fr; }
+            .article-title { font-size: 1.7rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LNHiwrx9v_kdswYXOB-lVkZJ7D9wR1q4luoFpWVliQ&s=10" alt="Logo Ba Động Travel" class="logo-img">
+                <span>DU LỊCH BIỂN BA ĐỘNG TRÀ VINH</span>
+            </a>
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Quay lại Trang chủ</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Article Header -->
+        <section class="article-header">
+            <div class="breadcrumb">
+                <a href="index.html">Trang chủ</a> / 
+                <a href="index.html#overview">Giới thiệu</a> / 
+                <span>Ẩm thực đặc sản</span>
+            </div>
+            <h1 class="article-title">ẨM THỰC VÀ ĐẶC SẢN</h1>
+            <div class="article-meta">
+                <span><i class="fa-regular fa-calendar"></i> Cập nhật: 2026 &nbsp;|&nbsp; </span>
+            </div>
+        </section>
+
+        <!-- Giới Thiệu -->
+        <section id="gioi-thieu">
+            <div class="featured-card">
+                <div class="featured-img-container">
+                    <img src="https://poliva.vn/wp-content/uploads/2019/07/bai-bien-ba-dong5.jpg" alt="Ẩm thực biển Ba Động">
+                </div>
+                <div class="featured-body">
+                    <p class="featured-text">
+                        Chào mừng bạn đến với hành trình khám phá Ẩm thực và Đặc sản Trà Vinh. Là vùng đất hội tụ nét văn hóa đặc sắc của ba dân tộc Kinh, Khmer và Hoa, Trà Vinh sở hữu kho tàng món ngon độc đáo khó nơi nào sánh bằng. Hãy cùng chúng tôi điểm qua những hương vị đặc trưng, ấn tượng nhất mà bạn nhất định phải thử khi ghé thăm vùng đất sông nước miền Tây này.
+                    </p> 
+                    <div class="quote-box">
+                        "Thưởng thức vị ngọt tự nhiên của các loại hải sản tươi sống nơi đây, với những món đặc sản như Chù ụ rang me, Mắm rươi, Tôm chà và Nghêu Ba Động."
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Đặc Sản -->
+        <section id="dac-san">
+            <div class="section-header">
+                <h2 class="section-title">MÓN NGON PHẢI THỬ TẠI BA ĐỘNG</h2>
+            </div>
+
+            <div class="grid">
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://poliva.vn/wp-content/uploads/2019/07/bai-bien-ba-dong5.jpg" alt="Chù Ụ Rang Me">
+                    </div>
+                    <div class="food-content">
+                        <h3 class="food-title">Chù Ụ rang me</h3>
+                        <p class="food-desc">Chù ụ thuộc họ cua, thân vuông nhỏ và có đôi mắt hơi sụp. Món ăn là sự kết hợp với vị chua ngọt của nước sốt me khiến ai thử rồi cũng phải thích mê.</p>
+                    </div>
+                </div>
+
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://i1-dulich.vnecdn.net/2016/01/21/loi-choi-sa-ot-7939-1453361379.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=HEwAeaJqLmKD6orHj6Ftzw" alt="Loi Choi Sả Ớt">
+                    </div>
+                    <div class="food-content">
+                        <h3 class="food-title">Loi Choi chiên sả ớt</h3>
+                        <p class="food-desc">Loi choi sống ở vùng giáp nước giữa mặn và ngọt, thân màu trăng trắng và trong suốt. Loi choi chiên ngập dầu với sả ớt tỏa hương thơm phức, vị béo ngậy giòn rụm.</p>
+                    </div>
+                </div>
+
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://cdn.tgdd.vn/Files/2022/09/22/1471343/ba-bau-an-ngheu-can-chu-y-gi-de-khong-gay-tac-dung-phu-202209222112460778.jpg" alt="Nghêu Ba Động">
+                    </div>
+                    <div class="food-content">
+                        <h3 class="food-title">Nghêu biển Ba Động</h3>
+                        <p class="food-desc">Nghêu vùng này con to, thịt dày, ngọt tự nhiên và ít sạn. Hấp sả hoặc nướng mỡ hành rất ngon.</p>
+                    </div>
+                </div>
+
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://media-cdn-v2.laodong.vn/storage/newsportal/2025/12/25/1630894/Ca-Khoai-15.jpg" alt="Cá khoai">
+                    </div>
+                    <div class="food-content">
+                        <h3 class="food-title">Cá khoai Ba Động</h3>
+                        <p class="food-desc">Cá khoai Ba Động nổi bật với thân tròn dài màu trắng hồng, thịt mềm ngọt tự nhiên và không có vảy. Món ăn thanh mát, bổ dưỡng, rất hợp để thưởng thức khi còn nóng.</p>
+                    </div>
+                </div>
+
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://mia.vn/media/uploads/blog-du-lich/tom-kho-vinh-kim-ngon-1743380371.jpg" alt="Tôm khô">
+                    </div>
+                    <div class="food-content">
+                        <h3 class="food-title">Tôm khô Vinh Kim</h3>
+                        <p class="food-desc">Tôm được chọn lọc, giữ nguyên vị ngọt tự nhiên và hương thơm đặc trưng của biển. Thịt tôm săn chắc, dễ chế biến, phù hợp cho nhiều món ăn như rim, chiên, nấu canh.</p>
+                    </div>
+                </div>
+
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?q=80&w=600&auto=format&fit=crop" alt="Mắm Rươi">
+                    </div>
+                    <div class="food-content">
+                        <h3 class="food-title">Mắm Rươi Duyên Hải</h3>
+                        <p class="food-desc">Ví như "Nước mắm Ngự", mắm rươi Ba Động thơm béo ngậy, dùng chấm thịt luộc hay rau sống cực đỉnh.</p>
+                    </div>
+                </div>
+
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://ticotravel.com.vn/wp-content/uploads/2024/08/mam-bo-hoc-2.jpg" alt="Mắm Bò Hóc">
+                    </div>
+                    <div class="food-content">
+                        <h3 class="food-title">Mắm Bò Hóc</h3>
+                        <p class="food-desc">Mắm bò hóc được chế biến khá công phu từ các loại cá nước ngọt vùng sông nước như cá lóc, cá sặc, cá phi... Đây là món ăn dân dã nhưng đã “đốn tim” không ít du khách.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bài viết chi tiết món ăn -->
+        <section id="bai-viet-chi-tiet">
+            <div class="article-block">
+                <div class="section-header">
+                    <h2 class="section-title">VÀ NHỮNG MÓN ĂN HẤP DẪN KHÁC</h2>
+                </div>
+
+                <!-- Món 1 -->
+                <h3 class="sub-heading">1. Bún nước lèo - đặc sản Trà Vinh đậm vị miền Tây</h3>
+                <p class="article-text">Không chỉ mang đậm hương vị vùng miền, bún nước lèo còn là sự giao thoa giữa văn hóa ẩm thực các dân tộc Việt, Hoa và Khmer. Bún nước lèo là sự kết hợp hài hòa giữa nhiều nguyên liệu như: Thịt heo quay, bò hóc, rau sống (bắp chuối, rau muống bào, bông súng, v.v), bên cạnh đó còn cá, tôm giúp món ăn thêm đậm đà hương vị.</p>
+                <p class="article-text">Khi ăn bạn sẽ cảm nhận được vị nước lèo thanh ngọt, mắm bò hóc đậm đà cùng rau sống, thịt heo quay giòn rụm.</p>
+                
+                <div class="article-img-wrapper">
+                    <img src="https://cdn.tgdd.vn/Files/2021/07/01/1364723/10-mon-dac-san-tra-vinh-lam-qua-tang-y-nghia-202206140959151566.jpg" alt="Bún nước lèo Trà Vinh">
+                    <p class="image-caption">Bún nước lèo có vị thanh mát ăn cùng tôm, thịt heo quay giòn rụm</p>
+                </div>
+
+                <!-- Món 2 -->
+                <h3 class="sub-heading">2. Cháo ám</h3>
+                <p class="article-text">Cháo ám được làm từ cá lóc (cá quả, cá chuối) được chế biến theo một cách đặc biệt và trở thành món ăn đặc trưng của vùng đất Trà Vinh. Cá lóc sẽ được luộc chín, bóc lấy phần thịt, thái nhỏ, sau đó xào với hành lá và các gia vị. Cháo nấu từ gạo tẻ, nước dùng cá kết hợp nước cốt dừa tạo nên hương vị thơm ngon, béo ngậy và thanh mát.</p>
+                <p class="article-text">Cháo ám khi ăn có vị ngọt thanh của nước dùng cá, vị béo của cá lóc, vị đậm đà từ các loại gia vị. Cháo được ăn kèm với các loại rau như: Rau đắng, rau ngổ, rau quế, bắp chuối bào, hành, ngò, bánh tráng mè nướng.</p>
+                
+                <div class="article-img-wrapper">
+                    <img src="https://images.baoangiang.com.vn/image/fckeditor/upload/2020/20201204/images/chao-am-2.jpg" alt="Món Cháo ám">
+                    <p class="image-caption">Cháo ám hay cháo cá lóc vốn là món ăn đặc sản của người Trà Vinh</p>
+                </div>
+
+                <!-- Món 3 -->
+                <h3 class="sub-heading">3. Bánh canh Bến Có</h3>
+                <p class="article-text">Đây là đặc sản trứ danh gắn liền với vùng đất ấp Bến Có, xã Nguyệt Hóa, huyện Châu Thành, tỉnh Trà Vinh (nay là tỉnh Vĩnh Long) suốt hơn 20 năm qua. Bánh canh Bến Có có sợi bánh dày, dai được làm từ bột gạo.</p>
+                <p class="article-text">Bánh canh có nước dùng ngon ngọt được ninh từ xương heo, có màu trong, rất thơm ngon, khi ăn bạn không cần cho thêm gia vị. Đây là món ăn được chế biến đơn giản nhưng lại đem đến hương vị đậm đà và khó quên cho thực khách.</p>
+                
+                <div class="article-img-wrapper">
+                    <img src="https://cdn.tgdd.vn/Files/2021/07/01/1364723/10-mon-dac-san-tra-vinh-lam-qua-tang-y-nghia-202206140959423236.jpg" alt="Món Cháo ám">
+                    <p class="image-caption">Bánh canh Bến Có</p>
+                </div>
+
+                <!-- Món 4 -->
+                <h3 class="sub-heading">4. Bún suông</h3>
+                <p class="article-text">Bún suông hay còn gọi là bún đuông, một món ăn dân dã và đặc sản độc đáo của người Trà Vinh. Đây không chỉ đơn thuần là một món bún mà hội tụ cả văn hóa, kỹ thuật chế biến truyền thống và hương vị riêng biệt.</p>
+                <p class="article-text">Bún được làm từ nhiều nguyên liệu, trong đó thành phần chính gồm bún, tôm và thịt ba chỉ. Sợi bún làm từ bột gạo pha ít bột năng giúp tạo nên sợi bún nhỏ nhưng có độ dai. Chả tôm, thành phần quan trọng của món bún này được làm từ tôm đất, tôm súng tươi trộn cùng thịt mỡ, bột năng, tỏi, tiêu và dầu. Bạn có thể ăn kèm với rau sống để tăng thêm hương vị cho món bún này.</p>
+                
+                <div class="article-img-wrapper">
+                    <img src="https://cdn.tgdd.vn/Files/2021/07/01/1364723/10-mon-dac-san-tra-vinh-lam-qua-tang-y-nghia-202206140959596875.jpg" alt="Món Cháo ám">
+                    <p class="image-caption">Bún suông</p>
+                </div>
+
+                <!-- Món 5 -->
+                <h3 class="sub-heading">5. Bánh tét Trà Cuôn</h3>
+                <p class="article-text">Là một đặc sản trứ danh của tỉnh Trà Vinh (nay là tỉnh Vĩnh Long), đến đây vào bất cứ dịp nào bạn cũng có thể được thưởng thức món bánh thơm ngon, đậm bản sắc vùng miền này. Đặc trưng của bánh tét Trà Cuôn là nếp có 3 màu xanh, cam, tím, cùng với vị bùi của đậu xanh, vị béo của thịt mỡ cùng vị mặn đậm đà của trứng muối và thịt ba rọi.</p>
+                
+                <div class="article-img-wrapper">
+                    <img src="https://ticotravel.com.vn/wp-content/uploads/2024/08/banh-tet-tra-cuon-6.jpg" alt="Món Cháo ám">
+                    <p class="image-caption">Bánh tét Trà Cuôn</p>
+                </div>
+
+                <!-- Món 6 -->
+                <h3 class="sub-heading">6. Bánh ú Đa Lộc</h3>
+                <p class="article-text">Bánh ú Đa Lộc hay còn được gọi là bánh bá trạng, đặc sản nổi tiếng của Trà Vinh, đặc biệt ở ấp Hương Phụ, xã Đa Lộc, huyện Châu Thành. Bánh thường được làm vào dịp Tết Đoan Ngọ và là một phần không thể thiếu trong mâm cỗ cúng của người dân địa phương. Bánh được làm từ gạo nếp, lá ngót để tạo màu xanh, đậu xanh, thịt mỡ và lòng đỏ trứng vịt muối. Khi ăn bánh có vị thơm dẻo của nếp, vị bùi của đậu xanh, vị béo của thịt mỡ và trứng muối, tạo nên một hương vị đặc trưng.</p>
+              
+                <div class="article-img-wrapper">
+                    <img src="https://minio.fares.vn/mixivivu-dev/tour/ship/blog/etpyi7c611pjnby8.webp" alt="Món Cháo ám">
+                    <p class="image-caption">Bánh ú Đa Lộc</p>
+                </div>
+
+                <!-- Món 7 -->
+                <h3 class="sub-heading">7. Dừa sáp</h3>
+                <p class="article-text">Dừa sáp là một đặc sản Trà Vinh hiếm có, nếu đã đến Trà Vinh định phải thử, đặc biệt ở huyện Cầu Kè. Dừa sáp có phần cơm dày, mềm dẻo, béo ngậy và nước dừa sệt, trong veo như sương sa. Dừa sáp được yêu thích bởi thực khách nhờ hương vị độc đáo, có thể chế biến thành nhiều món ngon như: Dừa sáp dầm sữa, kem dừa, sinh tố, v.v.</p>
+              
+                <div class="article-img-wrapper">
+                    <img src="https://i1-vnexpress.vnecdn.net/2022/04/08/dua-sap-9754-1649420488.png?w=1020&h=0&q=100&dpr=1&fit=crop&s=hpfS1h5gaUEhF5nmfd6UGg" alt="Món Cháo ám">
+                    <p class="image-caption">Dừa sáp với cùi dày, cơm mềm dẻo, nước ngọt</p>
+                </div>
+
+                <p class="article-text">Ẩm thực Trà Vinh là bản hòa tấu hương vị đầy màu sắc, dung dị nhưng để lại ấn tượng sâu đậm trong lòng du khách. Việc kết hợp khéo léo các nguyên liệu sông nước tự nhiên cùng bí quyết chế biến truyền thống đã tạo nên những món ăn vang danh như bún nước lèo, dừa sáp, bánh tét Trà Cuôn hay Chù ụ. Hy vọng những chia sẻ trên trang sẽ là cuốn cẩm nang hữu ích, giúp bạn dễ dàng có những trải nghiệm thưởng thức trọn vẹn nhất trong chuyến đi khám phá vùng đất Trà Vinh sắp tới.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Trang Quảng bá du lịch Biển Ba Động tỉnh Trà Vinh (nay là Tỉnh Vĩnh Long)</p>
+        </div>
+    </footer>
+</body>
+</html>
